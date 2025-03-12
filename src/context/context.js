@@ -1,25 +1,20 @@
-import React, {createContext} from "react";
-import {useCards} from "../hooks/customHooks";
+import React, { createContext } from 'react';
+import { useCards } from '../hooks/customHooks';
 
 const JobPrepContext = createContext();
 
-function JobPrepContextProvider({children}) {
+function JobPrepContextProvider({ children }) {
+  const cards = useCards();
 
-
-    const cards = useCards();
-
-
-    return (
-        <JobPrepContext.Provider
-            value={
-                {
-                    cards:cards
-                }
-            }
-        >
-            {children}
-        </JobPrepContext.Provider>
-    )
+  return (
+    <JobPrepContext.Provider
+      value={{
+        cards: cards,
+      }}
+    >
+      {children}
+    </JobPrepContext.Provider>
+  );
 }
 
-export {JobPrepContextProvider, JobPrepContext}
+export { JobPrepContextProvider, JobPrepContext };

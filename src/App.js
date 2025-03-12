@@ -1,15 +1,14 @@
-import './App.css'
-import Header from "./components/Header";
-import Cards from "./components/Cards";
+import './App.css';
+import Header from './components/Header';
+import Cards from './components/Cards';
 
 function App() {
-
   return (
-      <div className='app'>
-        <Header/>
-        <Cards/>
-      </div>
-  )
+    <div className="app">
+      <Header />
+      <Cards />
+    </div>
+  );
 }
 
-export default App
+export default App;

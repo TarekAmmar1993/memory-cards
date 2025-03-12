@@ -4,7 +4,6 @@
   transform: scale(0.75);
 }
 
-
 .block-wrap {
   background: rgb(255, 255, 255);
   border-bottom: 2px solid #c9c9c9;
@@ -21,8 +20,6 @@
   justify-items: stretch;
   align-content: flex-start;
   overflow-y: auto;
-
-
 }
 
 .block-col {
@@ -31,7 +28,7 @@
   flex-shrink: 0;
   margin: 5px;
   cursor: pointer;
-  border-radius: 10px
+  border-radius: 10px;
 }
 
 .block {
@@ -41,14 +38,11 @@
   margin: auto 0;
   position: relative;
   will-change: transform;
-
 }
 
-
-.questionTitle{
+.questionTitle {
   margin: 5px;
 }
-
 
 /* Modal */
 .Modal {
@@ -60,16 +54,13 @@
   background: rgba(0, 0, 0, 0.8);
 
   z-index: 99;
-
 }
 .Modal .container {
   position: fixed;
   top: 25%;
   left: 50%;
   transform: translate(-50%, -25%);
-
 }
-
 
 .flipButton {
   position: absolute;
@@ -85,57 +76,54 @@
   cursor: pointer;
 }
 
-
-
 /* flip effect*/
 /* front of the card */
-.block-col .front{
+.block-col .front {
   transform: rotateY(90deg);
   transition: all ease-in 0.2s;
   position: absolute;
 }
-.flipped .front{
+.flipped .front {
   transform: rotateY(0deg);
   transition-delay: 0.2s;
 }
 /* front of the card */
-.block-col .back{
+.block-col .back {
   transition: all ease-in 0.2s;
   transition-delay: 0.2s;
 }
-.flipped .back{
+.flipped .back {
   transform: rotateY(90deg);
   transition-delay: 0s;
 }
 
 /*Zoomed Card*/
-.zoomedCard{
+.zoomedCard {
   border-radius: 10px;
   width: 800px;
   height: 500px;
 }
-.title{
+.title {
   font-size: 50px;
   display: contents;
 }
-.responseTitle{
+.responseTitle {
   width: 800px;
   margin-bottom: 70px;
-
 }
-.response{
+.response {
   margin-top: 10%;
   font-size: 20px;
   margin-left: 5px;
   margin-right: 5px;
 }
-.question{
+.question {
   margin: 10%;
   font-size: 20px;
 }
 
 /* Button add card */
-.add-btn{
+.add-btn {
   align-items: center;
   background-image: linear-gradient(135deg, #f34079 40%, #fc894d);
   margin: 5px;
@@ -143,12 +131,12 @@
   box-sizing: border-box;
   color: #fff;
   cursor: pointer;
-  font-family: "Codec cold",sans-serif;
+  font-family: 'Codec cold', sans-serif;
   font-size: 16px;
   font-weight: 700;
   height: 54px;
   justify-content: center;
-  letter-spacing: .4px;
+  letter-spacing: 0.4px;
   line-height: 1;
   max-width: 100%;
   padding-left: 20px;
@@ -173,8 +161,8 @@
 }
 
 .add-btn:hover span {
-  transform: scale(.9);
-  opacity: .75;
+  transform: scale(0.9);
+  opacity: 0.75;
 }
 
 @media screen and (max-width: 991px) {
@@ -188,15 +176,14 @@
   }
 }
 
-
 /* Form */
 form {
-  margin-left:auto;
-  margin-right:auto;
+  margin-left: auto;
+  margin-right: auto;
   width: 750px;
   height: fit-content;
-  padding:30px;
-  border: 1px solid rgba(0,0,0,.2);
+  padding: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   border-radius: 5px;
@@ -204,72 +191,71 @@ form {
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
   background: rgba(0, 0, 0, 0.5);
-  -moz-box-shadow: 0 0 13px 3px rgba(0,0,0,.5);
-  -webkit-box-shadow: 0 0 13px 3px rgba(0,0,0,.5);
-  box-shadow: 0 0 13px 3px rgba(0,0,0,.5);
+  -moz-box-shadow: 0 0 13px 3px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 0 13px 3px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 13px 3px rgba(0, 0, 0, 0.5);
   overflow: hidden;
 }
 
-textarea{
-  background: rgba(255, 255, 255, 0.4)  no-repeat scroll 16px 16px;
+textarea {
+  background: rgba(255, 255, 255, 0.4) no-repeat scroll 16px 16px;
   width: inherit;
   height: 110px;
-  border: 1px solid rgba(255,255,255,.6);
+  border: 1px solid rgba(255, 255, 255, 0.6);
 
   -webkit-border-radius: 4px;
   border-radius: 4px;
   background-clip: padding-box;
-  display:block;
+  display: block;
   font-family: 'Source Sans Pro', sans-serif;
-  font-size:18px;
-  color:#fff;
-  padding-top:12px;
-  margin-bottom:20px;
-  overflow:hidden;
+  font-size: 18px;
+  color: #fff;
+  padding-top: 12px;
+  margin-bottom: 20px;
+  overflow: hidden;
 }
 
 input {
   width: 750px;
   height: 48px;
-  border: 1px solid rgba(255,255,255,.4);
+  border: 1px solid rgba(255, 255, 255, 0.4);
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
   border-radius: 4px;
   -moz-background-clip: padding;
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
-  display:block;
+  display: block;
   font-family: 'Source Sans Pro', sans-serif;
-  font-size:18px;
-  color:#fff;
+  font-size: 18px;
+  color: #fff;
 
-  margin-bottom:20px;
+  margin-bottom: 20px;
 }
 
-input[type=submit] {
-  cursor:pointer;
+input[type='submit'] {
+  cursor: pointer;
 }
 
 input.name {
-  background: rgba(255, 255, 255, 0.4)  no-repeat scroll 16px 16px;
-
+  background: rgba(255, 255, 255, 0.4) no-repeat scroll 16px 16px;
 }
 
 input.email {
   background: rgba(255, 255, 255, 0.4) no-repeat scroll 16px 20px;
-  padding-left:45px;
+  padding-left: 45px;
 }
 
 input.message {
   background: rgba(255, 255, 255, 0.4) no-repeat scroll 16px 16px;
-  padding-left:45px;
+  padding-left: 45px;
 }
 
 ::-webkit-input-placeholder {
   color: #fff;
 }
 
-:-moz-placeholder{
+:-moz-placeholder {
   color: #fff;
 }
 
@@ -281,11 +267,12 @@ input.message {
   color: #fff;
 }
 
-input:focus, textarea:focus {
+input:focus,
+textarea:focus {
   background-color: rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 0 0 5px 1px rgba(255,255,255,.5);
-  -webkit-box-shadow: 0 0 5px 1px rgba(255,255,255,.5);
-  box-shadow: 0 0 5px 1px rgba(255,255,255,.5);
+  -moz-box-shadow: 0 0 5px 1px rgba(255, 255, 255, 0.5);
+  -webkit-box-shadow: 0 0 5px 1px rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 5px 1px rgba(255, 255, 255, 0.5);
   overflow: hidden;
 }
 
@@ -294,10 +281,16 @@ input:focus, textarea:focus {
   width: 138px;
   height: 44px;
 
-  float:right;
+  float: right;
   border: 1px solid #253737;
   background: #416b68;
-  background: -webkit-gradient(linear, left top, left bottom, from(#6da5a3), to(#416b68));
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#6da5a3),
+    to(#416b68)
+  );
   background: -webkit-linear-gradient(top, #6da5a3, #416b68);
   background: -moz-linear-gradient(top, #6da5a3, #416b68);
   background: -ms-linear-gradient(top, #6da5a3, #416b68);
@@ -307,9 +300,12 @@ input:focus, textarea:focus {
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
   border-radius: 6px;
-  -webkit-box-shadow: rgba(255,255,255,0.1) 0 1px 0, inset rgba(255,255,255,0.7) 0 1px 0;
-  -moz-box-shadow: rgba(255,255,255,0.1) 0 1px 0, inset rgba(255,255,255,0.7) 0 1px 0;
-  box-shadow: rgba(255,255,255,0.1) 0 1px 0, inset rgba(255,255,255,0.7) 0 1px 0;
+  -webkit-box-shadow: rgba(255, 255, 255, 0.1) 0 1px 0,
+    inset rgba(255, 255, 255, 0.7) 0 1px 0;
+  -moz-box-shadow: rgba(255, 255, 255, 0.1) 0 1px 0,
+    inset rgba(255, 255, 255, 0.7) 0 1px 0;
+  box-shadow: rgba(255, 255, 255, 0.1) 0 1px 0,
+    inset rgba(255, 255, 255, 0.7) 0 1px 0;
   text-shadow: #333333 0 1px 0;
   color: #e1e1e1;
 }
@@ -318,7 +314,13 @@ input:focus, textarea:focus {
   border: 1px solid #253737;
   text-shadow: #333333 0 1px 0;
   background: #416b68;
-  background: -webkit-gradient(linear, left top, left bottom, from(#77b2b0), to(#416b68));
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#77b2b0),
+    to(#416b68)
+  );
   background: -webkit-linear-gradient(top, #77b2b0, #416b68);
   background: -moz-linear-gradient(top, #77b2b0, #416b68);
   background: -ms-linear-gradient(top, #77b2b0, #416b68);
@@ -328,48 +330,75 @@ input:focus, textarea:focus {
 }
 
 .btn:active {
-  margin-top:1px;
+  margin-top: 1px;
   text-shadow: #333333 0 -1px 0;
   border: 1px solid #253737;
   background: #6da5a3;
-  background: -webkit-gradient(linear, left top, left bottom, from(#416b68), to(#416b68));
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#416b68),
+    to(#416b68)
+  );
   background: -webkit-linear-gradient(top, #416b68, #609391);
   background: -moz-linear-gradient(top, #416b68, #6da5a3);
   background: -ms-linear-gradient(top, #416b68, #6da5a3);
   background: -o-linear-gradient(top, #416b68, #6da5a3);
   background-image: -ms-linear-gradient(top, #416b68 0%, #6da5a3 100%);
   color: #fff;
-  -webkit-box-shadow: rgba(255,255,255,0) 0 1px 0, inset rgba(255,255,255,0.7) 0 1px 0;
-  -moz-box-shadow: rgba(255,255,255,0) 0 1px 0, inset rgba(255,255,255,0.7) 0 1px 0;
-  box-shadow: rgba(255,255,255,0) 0 1px 0, inset rgba(255,255,255,0.7) 0 1px 0;
+  -webkit-box-shadow: rgba(255, 255, 255, 0) 0 1px 0,
+    inset rgba(255, 255, 255, 0.7) 0 1px 0;
+  -moz-box-shadow: rgba(255, 255, 255, 0) 0 1px 0,
+    inset rgba(255, 255, 255, 0.7) 0 1px 0;
+  box-shadow: rgba(255, 255, 255, 0) 0 1px 0,
+    inset rgba(255, 255, 255, 0.7) 0 1px 0;
 }
 
 /* delete button */
-.deleteButton{
+.deleteButton {
   position: fixed;
   bottom: 0;
   right: 0;
   margin: 10px;
 }
 
-.deleteButton:hover{
+.deleteButton:hover {
   animation: shake 0.5s;
   animation-iteration-count: infinite;
 }
 @keyframes shake {
-  0% { transform: translate(1px, 1px) rotate(0deg); }
-  10% { transform: translate(-1px, -2px) rotate(-1deg); }
-  20% { transform: translate(-3px, 0px) rotate(1deg); }
-  30% { transform: translate(3px, 2px) rotate(0deg); }
-  40% { transform: translate(1px, -1px) rotate(1deg); }
-  50% { transform: translate(-1px, 2px) rotate(-1deg); }
-  60% { transform: translate(-3px, 1px) rotate(0deg); }
-  70% { transform: translate(3px, 1px) rotate(-1deg); }
-  80% { transform: translate(-1px, -1px) rotate(1deg); }
-  90% { transform: translate(1px, 2px) rotate(0deg); }
-  100% { transform: translate(1px, -2px) rotate(-1deg); }
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
 }
-
-
-
-

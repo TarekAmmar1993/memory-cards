@@ -1,21 +1,19 @@
-import React, {useRef} from 'react'
+import React, { useRef } from 'react';
 
-function Modal({children, showModal, setShowModal}) {
-    const modalRef = useRef()
+function Modal({ children, showModal, setShowModal }) {
+  const modalRef = useRef();
 
+  const closeModal = () => {
+    setShowModal(false);
+  };
 
-    const closeModal = () => {
-        setShowModal(false)
-    }
-
-    return (
-        showModal   &&
-        <div className="Modal" ref={modalRef} onClick={closeModal}>
-            <div className="container">
-                {children}
-            </div>
-        </div>
+  return (
+    showModal && (
+      <div className="Modal" ref={modalRef} onClick={closeModal}>
+        <div className="container">{children}</div>
+      </div>
     )
+  );
 }
 
-export default Modal
+export default Modal;
