@@ -1,7 +1,8 @@
 import React, { useRef } from 'react';
+import { IModal } from '../common/types';
 
-function Modal({ children, showModal, setShowModal }) {
-  const modalRef = useRef();
+function Modal({ children, showModal, setShowModal }: IModal) {
+  const modalRef = useRef(null);
 
   const closeModal = () => {
     setShowModal(false);

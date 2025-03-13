@@ -1,6 +1,7 @@
 import { ArrowClockwise, Trash, X } from 'react-bootstrap-icons';
 import { useState } from 'react';
 import firebase from '../Firebase/firebase';
+import { IZoomedCard } from '../common/types';
 
 function ZoomedCard({
   id,
@@ -9,7 +10,7 @@ function ZoomedCard({
   question,
   handleClick,
   answer,
-}) {
+}: IZoomedCard) {
   // State
   const [flipped, setFlipped] = useState(false);
 
@@ -17,12 +18,12 @@ function ZoomedCard({
     setFlipped(!flipped);
   }
 
-  function handleExit(e) {
+  function handleExit(e: React.FormEvent<HTMLFormElement>) {
     e.stopPropagation();
     setShowModal(false);
   }
 
-  function handleDelete(e) {
+  function handleDelete(e: React.FormEvent<HTMLFormElement>) {
     firebase.firestore().collection('Cards').doc(id).delete();
 
     handleExit(e);

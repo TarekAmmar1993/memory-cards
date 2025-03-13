@@ -15,13 +15,13 @@
     "randomcolor": "^0.6.2",
     "react": "^18.0.0",
     "react-bootstrap-icons": "^1.8.1",
-    "react-dom": "^18.0.0",
-    "typescript": "^5.8.2"
+    "react-dom": "^18.0.0"
   },
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
-    "start": "npx serve@latest ./build"
+    "start": "npx serve@latest ./build",
+    "typecheck": "tsc --noEmit"
   },
   "eslintConfig": {
     "extends": [
@@ -40,5 +40,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "typescript": "^5.8.2"
   }
 }

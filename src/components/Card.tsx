@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import Modal from './Modal';
 import ZoomedCard from './ZoomedCard';
+import { ICard } from '../common/types';
 
-function Card({ id, questionPreview, question, answer, color }) {
+function Card({ id, questionPreview, question, answer, color }: ICard) {
   // State
   const [showModal, setShowModal] = useState(false);
 

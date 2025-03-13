@@ -2,11 +2,11 @@ import { useState } from 'react';
 import firebase from '../Firebase/firebase';
 import randomcolor from 'randomcolor';
 
-function QuestionForm({ setShowModal }) {
+function QuestionForm({ setShowModal }: { setShowModal: any }) {
   const [questionPreview, setQuestionPreview] = useState('');
   const [question, setQuestion] = useState('');
   const [answer, setAnswer] = useState('');
-  function handleForm(e) {
+  function handleForm(e: React.SyntheticEvent<EventTarget>) {
     e.preventDefault();
     let color = randomcolor();
 
