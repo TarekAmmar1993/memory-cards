@@ -1,36 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);
 
-.block-wrap {
-  display: flex;
-  overflow: hidden;
-  margin-top: 10px;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  grid-gap: 10px;
-  justify-items: stretch;
-  align-content: flex-start;
-  overflow-y: auto;
-}
-
-.block-col {
-  height: 150px;
-  width: 287px;
-  flex-shrink: 0;
-  margin: 5px;
-  cursor: pointer;
-  border-radius: 10px;
-}
-
-.block {
-  height: inherit;
-  width: inherit;
-  border-radius: 8px;
-  margin: auto 0;
-  position: relative;
-  will-change: transform;
-}
-
 .flipped .flip-card-inner {
   transform: rotateY(180deg);
 }

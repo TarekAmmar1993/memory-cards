@@ -13,12 +13,12 @@ function Card({ id, questionPreview, question, answer, color }: ICard) {
 
   return (
     <div
-      className="block-col"
+      className="rounded-lg shadow-2xl p-4 cursor-pointer min-w-3xs min-h-36"
       onClick={handleClick}
       style={{ background: color }}
     >
-      <h4 className="questionTitle"> Question </h4>
-      <p className="question"> {questionPreview}</p>
+      <h2 className="mb-4"> Question </h2>
+      <p> {questionPreview}</p>
 
       <Modal showModal={showModal} setShowModal={setShowModal}>
         <ZoomedCard

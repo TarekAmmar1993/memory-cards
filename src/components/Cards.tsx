@@ -4,11 +4,11 @@ import { JobPrepContext } from '../context/context';
 import { ICard } from '../common/types';
 
 function Cards() {
-  //context
+  // context
   const { cards } = useContext(JobPrepContext);
 
   return (
-    <div className="block-wrap">
+    <div className="flex flex-wrap justify-center gap-4 p-2 max-w-fit mx-auto">
       {cards.map((card: ICard) => (
         <Card
           id={card.id}
