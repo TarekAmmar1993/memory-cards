@@ -18,7 +18,7 @@ function Card({ id, questionPreview, question, answer, color }: ICard) {
       style={{ background: color }}
     >
       <h4 className="questionTitle"> Question </h4>
-      <div className="question"> {questionPreview}</div>
+      <p className="question"> {questionPreview}</p>
 
       <Modal showModal={showModal} setShowModal={setShowModal}>
         <ZoomedCard

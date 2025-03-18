@@ -1,7 +1,7 @@
-import { ArrowClockwise, Trash, X } from 'react-bootstrap-icons';
 import { useState } from 'react';
 import firebase from '../Firebase/firebase';
 import { IZoomedCard } from '../common/types';
+import CardCTA from './CardCTA';
 
 function ZoomedCard({
   id,
@@ -25,44 +25,33 @@ function ZoomedCard({
 
   function handleDelete(e: React.FormEvent<HTMLFormElement>) {
     firebase.firestore().collection('Cards').doc(id).delete();
-
     handleExit(e);
   }
 
   return (
-    <div
-      className="zoomedCard"
-      onClick={handleClick}
-      style={{ background: color }}
-    >
-      <div className={flipped ? 'flipped' : ''}>
-        <div className="front">
-          <div className="responseTitle">
-            <p className="title"> Answer </p>
-          </div>
-          <div className="response"> {answer}</div>
-          <div className="exitButton" onClick={handleExit}>
-            <X size="40px" />
-          </div>
-          <div className="flipButton" onClick={handleFlip}>
-            <ArrowClockwise size="30px" />
-          </div>
+    <div className={flipped ? 'flipped' : ''} onClick={handleClick}>
+      <div
+        className="flip-card-inner rounded-2xl w-[800px] h-[500px] relative text-center transform-3d transition duration-600 ease-in-out transform"
+        onClick={handleClick}
+        style={{ background: color }}
+      >
+        <div className="p-8 absolute w-full h-full backface-hidden">
+          <h2 className="mb-12">Question</h2>
+          <p> {question} </p>
+          <CardCTA
+            handleExit={handleExit}
+            handleDelete={handleDelete}
+            handleFlip={handleFlip}
+          />
         </div>
-
-        <div className="back">
-          <div className="questionTitle">
-            <p className="title"> Question </p>
-          </div>
-          <div className="question"> {question} </div>
-          <div className="exitButton" onClick={handleExit}>
-            <X size="40px" />
-          </div>
-          <div className="flipButton" onClick={handleFlip}>
-            <ArrowClockwise size="30px" />
-          </div>
-          <div className="deleteButton" onClick={handleDelete}>
-            <Trash size="30px" color="red" />
-          </div>
+        <div className="p-8 absolute w-full h-full backface-hidden rotate-y-180">
+          <h2 className="mb-12">Answer</h2>
+          <p> {answer}</p>
+          <CardCTA
+            handleExit={handleExit}
+            handleDelete={handleDelete}
+            handleFlip={handleFlip}
+          />
         </div>
       </div>
     </div>

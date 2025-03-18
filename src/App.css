@@ -31,86 +31,8 @@
   will-change: transform;
 }
 
-.questionTitle {
-  margin: 5px;
-}
-
-/* Modal */
-.Modal {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.8);
-
-  z-index: 99;
-}
-.Modal .container {
-  position: fixed;
-  top: 25%;
-  left: 50%;
-  transform: translate(-50%, -25%);
-}
-
-.flipButton {
-  position: absolute;
-  top: 20px;
-  right: 750px;
-  cursor: pointer;
-}
-
-.exitButton {
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  cursor: pointer;
-}
-
-/* flip effect*/
-/* front of the card */
-.block-col .front {
-  transform: rotateY(90deg);
-  transition: all ease-in 0.2s;
-  position: absolute;
-}
-.flipped .front {
-  transform: rotateY(0deg);
-  transition-delay: 0.2s;
-}
-/* front of the card */
-.block-col .back {
-  transition: all ease-in 0.2s;
-  transition-delay: 0.2s;
-}
-.flipped .back {
-  transform: rotateY(90deg);
-  transition-delay: 0s;
-}
-
-/*Zoomed Card*/
-.zoomedCard {
-  border-radius: 10px;
-  width: 800px;
-  height: 500px;
-}
-.title {
-  font-size: 50px;
-  display: contents;
-}
-.responseTitle {
-  width: 800px;
-  margin-bottom: 70px;
-}
-.response {
-  margin-top: 10%;
-  font-size: 20px;
-  margin-left: 5px;
-  margin-right: 5px;
-}
-.question {
-  margin: 10%;
-  font-size: 20px;
+.flipped .flip-card-inner {
+  transform: rotateY(180deg);
 }
 
 /* Form */
@@ -292,15 +214,7 @@ textarea:focus {
     inset rgba(255, 255, 255, 0.7) 0 1px 0;
 }
 
-/* delete button */
-.deleteButton {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  margin: 10px;
-}
-
-.deleteButton:hover {
+.delete-btn:hover {
   animation: shake 0.5s;
   animation-iteration-count: infinite;
 }

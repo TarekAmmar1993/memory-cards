@@ -10,8 +10,14 @@ function Modal({ children, showModal, setShowModal }: IModal) {
 
   return (
     showModal && (
-      <div className="Modal" ref={modalRef} onClick={closeModal}>
-        <div className="container">{children}</div>
+      <div
+        className="absolute top-0 left-0 w-screen h-screen bg-black/80"
+        ref={modalRef}
+        onClick={closeModal}
+      >
+        <div className="fixed top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/4">
+          {children}
+        </div>
       </div>
     )
   );

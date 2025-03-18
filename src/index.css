@@ -1,10 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800&display=swap');
 @import 'tailwindcss';
 
+@layer base {
+  h1 {
+    font-size: 24px;
+  }
+  h2 {
+    font-size: 22px;
+  }
+  h3 {
+    font-size: 20px;
+  }
+  h4 {
+    font-size: 18px;
+  }
+  h5 {
+    font-size: 16px;
+  }
+  h6 {
+    font-size: 14px;
+  }
+}
+
 /* base styles */
 body {
   font-family: Raleway, sans-serif;
   margin: 0;
-  font-size: 1.5em;
   text-align: center;
 }

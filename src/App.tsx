@@ -7,12 +7,10 @@ import React from 'react';
 function App() {
   return (
     <JobPrepContextProvider>
-      <React.StrictMode>
-        <div className="app">
-          <Header />
-          <Cards />
-        </div>
-      </React.StrictMode>
+      <div className="app">
+        <Header />
+        <Cards />
+      </div>
     </JobPrepContextProvider>
   );
 }

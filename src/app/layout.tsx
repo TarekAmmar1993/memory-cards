@@ -14,7 +14,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <title>MemCards</title>
+        <title>Memory Cards</title>
       </head>
       <body>
         <div id="root">{children}</div>
