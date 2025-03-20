@@ -24,7 +24,7 @@ const ZoomedCard = ({
   };
 
   const handleDelete = (e: React.FormEvent<HTMLFormElement>) => {
-    firebase.firestore().collection('Cards').doc(id).delete();
+    firebase.firestore().collection('Cards').doc(id.toString()).delete();
     handleExit(e);
   };
 
