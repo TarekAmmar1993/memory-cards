@@ -34,7 +34,6 @@ export const AddForm = ({ setShowModal }: { setShowModal: any }) => {
   });
 
   const onSubmit = (values: z.infer<typeof formSchema>) => {
-    console.log(values);
     let color = randomcolor();
 
     firebase.firestore().collection('Cards').add({
