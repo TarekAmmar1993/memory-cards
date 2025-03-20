@@ -29,9 +29,11 @@ function ZoomedCard({
   }
 
   return (
-    <div className={flipped ? 'flipped' : ''} onClick={handleClick}>
+    <div onClick={handleClick}>
       <div
-        className="flip-card-inner rounded-2xl w-[800px] h-[500px] relative text-center transform-3d transition duration-600 ease-in-out transform"
+        className={`flip-card-inner rounded-2xl w-[800px] h-[500px] relative text-center transform-3d transition duration-600 ease-in-out transform ${
+          flipped ? 'rotate-y-180' : ''
+        }`}
         onClick={handleClick}
         style={{ background: color }}
       >

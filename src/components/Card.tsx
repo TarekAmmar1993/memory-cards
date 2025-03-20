@@ -13,7 +13,7 @@ function Card({ id, questionPreview, question, answer, color }: ICard) {
 
   return (
     <div
-      className="rounded-lg shadow-2xl p-4 cursor-pointer min-w-3xs min-h-36"
+      className="rounded-lg shadow-2xl p-4 cursor-pointer w-3xs h-36"
       onClick={handleClick}
       style={{ background: color }}
     >

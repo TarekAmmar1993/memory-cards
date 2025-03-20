@@ -11,7 +11,7 @@ const CardCTA = ({ handleExit, handleDelete, handleFlip }) => {
         <ArrowClockwise size="30px" />
       </div>
       <div
-        className="delete-btn fixed bottom-4 right-4 cursor-pointer"
+        className="fixed bottom-4 right-4 cursor-pointer hover:animate-bounce "
         onClick={handleDelete}
       >
         <Trash size="30px" color="red" />

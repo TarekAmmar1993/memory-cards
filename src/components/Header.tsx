@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import Modal from './Modal';
-import QuestionForm from './QuestionForm';
 import { SquarePlus } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { AddForm } from './addForm';
+
 function Header() {
   const [showModal, setShowModal] = useState(false);
 
@@ -21,7 +22,7 @@ function Header() {
       </Button>
 
       <Modal showModal={showModal} setShowModal={setShowModal}>
-        <QuestionForm setShowModal={setShowModal} />
+        <AddForm setShowModal={setShowModal} />
       </Modal>
     </div>
   );
