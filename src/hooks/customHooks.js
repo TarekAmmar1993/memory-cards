@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import firebase from '../Firebase/firebase';
 
-export function useCards() {
+export const useCards = () => {
   const [cards, setCards] = useState([]);
 
   useEffect(() => {
@@ -23,4 +23,4 @@ export function useCards() {
   }, []);
 
   return cards;
-}
+};

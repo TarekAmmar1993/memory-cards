@@ -28,12 +28,12 @@ const formSchema = z.object({
   }),
 });
 
-export function AddForm({ setShowModal }: { setShowModal: any }) {
+export const AddForm = ({ setShowModal }: { setShowModal: any }) => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
+  const onSubmit = (values: z.infer<typeof formSchema>) => {
     console.log(values);
     let color = randomcolor();
 
@@ -44,7 +44,7 @@ export function AddForm({ setShowModal }: { setShowModal: any }) {
       color: color,
     });
     setShowModal(false);
-  }
+  };
 
   return (
     <Form {...form}>
@@ -113,4 +113,4 @@ export function AddForm({ setShowModal }: { setShowModal: any }) {
       </form>
     </Form>
   );
-}
+};

@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import { JobPrepContext } from '../context/context';
 import { ICard } from '../common/types';
 
-function Cards() {
+const Cards = () => {
   // context
   const { cards } = useContext(JobPrepContext);
 
@@ -20,6 +20,6 @@ function Cards() {
       ))}
     </div>
   );
-}
+};
 
 export default Cards;

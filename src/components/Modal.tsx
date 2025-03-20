@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { IModal } from '../common/types';
 
-function Modal({ children, showModal, setShowModal }: IModal) {
+const Modal = ({ children, showModal, setShowModal }: IModal) => {
   const modalRef = useRef(null);
 
   const closeModal = () => {
@@ -21,6 +21,6 @@ function Modal({ children, showModal, setShowModal }: IModal) {
       </div>
     )
   );
-}
+};
 
 export default Modal;

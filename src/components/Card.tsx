@@ -3,13 +3,13 @@ import Modal from './Modal';
 import ZoomedCard from './ZoomedCard';
 import { ICard } from '../common/types';
 
-function Card({ id, questionPreview, question, answer, color }: ICard) {
+const Card = ({ id, questionPreview, question, answer, color }: ICard) => {
   // State
   const [showModal, setShowModal] = useState(false);
 
-  function handleClick() {
+  const handleClick = () => {
     setShowModal(true);
-  }
+  };
 
   return (
     <div
@@ -32,6 +32,6 @@ function Card({ id, questionPreview, question, answer, color }: ICard) {
       </Modal>
     </div>
   );
-}
+};
 
 export default Card;

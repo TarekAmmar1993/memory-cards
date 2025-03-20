@@ -4,12 +4,12 @@ import { SquarePlus } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { AddForm } from './addForm';
 
-function Header() {
+const Header = () => {
   const [showModal, setShowModal] = useState(false);
 
-  function handleAddButton() {
+  const handleAddButton = () => {
     setShowModal(true);
-  }
+  };
 
   return (
     <div className="bg-linear-to-r/hsl from-indigo-700 to-indigo-400 flex justify-between items-center p-3">
@@ -26,5 +26,5 @@ function Header() {
       </Modal>
     </div>
   );
-}
+};
 export default Header;

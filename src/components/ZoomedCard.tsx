@@ -3,30 +3,30 @@ import firebase from '../Firebase/firebase';
 import { IZoomedCard } from '../common/types';
 import CardCTA from './CardCTA';
 
-function ZoomedCard({
+const ZoomedCard = ({
   id,
   color,
   setShowModal,
   question,
   handleClick,
   answer,
-}: IZoomedCard) {
+}: IZoomedCard) => {
   // State
   const [flipped, setFlipped] = useState(false);
 
-  function handleFlip() {
+  const handleFlip = () => {
     setFlipped(!flipped);
-  }
+  };
 
-  function handleExit(e: React.FormEvent<HTMLFormElement>) {
+  const handleExit = (e: React.FormEvent<HTMLFormElement>) => {
     e.stopPropagation();
     setShowModal(false);
-  }
+  };
 
-  function handleDelete(e: React.FormEvent<HTMLFormElement>) {
+  const handleDelete = (e: React.FormEvent<HTMLFormElement>) => {
     firebase.firestore().collection('Cards').doc(id).delete();
     handleExit(e);
-  }
+  };
 
   return (
     <div onClick={handleClick}>
@@ -58,5 +58,5 @@ function ZoomedCard({
       </div>
     </div>
   );
-}
+};
 export default ZoomedCard;

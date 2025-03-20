@@ -3,7 +3,7 @@ import { useCards } from '../hooks/customHooks';
 
 const JobPrepContext = createContext();
 
-function JobPrepContextProvider({ children }) {
+const JobPrepContextProvider = ({ children }) => {
   const cards = useCards();
 
   return (
@@ -15,6 +15,6 @@ function JobPrepContextProvider({ children }) {
       {children}
     </JobPrepContext.Provider>
   );
-}
+};
 
 export { JobPrepContextProvider, JobPrepContext };

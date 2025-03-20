@@ -4,6 +4,6 @@ import dynamic from 'next/dynamic';
 
 const App = dynamic(() => import('../../App'), { ssr: false });
 
-export function ClientOnly() {
+export const ClientOnly = () => {
   return <App />;
-}
+};

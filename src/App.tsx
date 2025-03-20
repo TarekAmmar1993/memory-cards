@@ -3,7 +3,7 @@ import Cards from './components/Cards';
 import { JobPrepContextProvider } from './context/context';
 import React from 'react';
 
-function App() {
+const App = () => {
   return (
     <JobPrepContextProvider>
       <div className="app">
@@ -12,6 +12,6 @@ function App() {
       </div>
     </JobPrepContextProvider>
   );
-}
+};
 
 export default App;
