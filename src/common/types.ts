@@ -17,6 +17,5 @@ export interface IZoomedCard {
   color: string;
   setShowModal: any;
   question: string;
-  handleClick: (e: React.FormEvent<HTMLFormElement>) => void;
   answer: string;
 }

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { MouseEventHandler, useState } from 'react';
 import firebase from '../Firebase/firebase';
 import { IZoomedCard } from '../common/types';
 import CardCTA from './CardCTA';
@@ -8,7 +8,6 @@ const ZoomedCard = ({
   color,
   setShowModal,
   question,
-  handleClick,
   answer,
 }: IZoomedCard) => {
   // State
@@ -18,23 +17,22 @@ const ZoomedCard = ({
     setFlipped(!flipped);
   };
 
-  const handleExit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleExit = (e) => {
     e.stopPropagation();
     setShowModal(false);
   };
 
-  const handleDelete = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleDelete = (e) => {
     firebase.firestore().collection('Cards').doc(id.toString()).delete();
     handleExit(e);
   };
 
   return (
-    <div onClick={handleClick}>
+    <div>
       <div
         className={`flip-card-inner rounded-2xl w-[800px] h-[500px] relative text-center transform-3d transition duration-600 ease-in-out transform ${
           flipped ? 'rotate-y-180' : ''
         }`}
-        onClick={handleClick}
         style={{ background: color }}
       >
         <div className="p-8 absolute w-full h-full backface-hidden">

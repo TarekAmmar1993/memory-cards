@@ -26,7 +26,6 @@ const Card = ({ id, questionPreview, question, answer, color }: ICard) => {
           color={color}
           setShowModal={setShowModal}
           question={question}
-          handleClick={handleClick}
           answer={answer}
         />
       </Modal>
