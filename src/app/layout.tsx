@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { Analytics } from '@vercel/analytics/react';
 import '../index.css';
 
 export const metadata: Metadata = {
@@ -13,7 +14,10 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         <title>Memory Cards</title>
       </head>
       <body>
-        <div id="root">{children}</div>
+        <div id="root">
+          {children}
+          <Analytics />
+        </div>
       </body>
     </html>
   );
