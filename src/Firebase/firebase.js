@@ -2,12 +2,12 @@ import firebase from 'firebase/app';
 import 'firebase/firestore';
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyCtcHqPh7_Z84HvanVG96m0jNHMogXIkxI',
-  authDomain: 'job-prep-5fd56.firebaseapp.com',
-  projectId: 'job-prep-5fd56',
-  storageBucket: 'job-prep-5fd56.appspot.com',
-  messagingSenderId: '1070000000000',
-  appId: '1:1070000000000:web:0000000000000000000000',
+  apiKey: AIzaSyCtcHqPh7_Z84HvanVG96m0jNHMogXIkxI,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
 };
 
 firebase.initializeApp(firebaseConfig);
