@@ -62,9 +62,6 @@ importers:
       postcss:
         specifier: ^8.5.3
         version: 8.5.3
-      randomcolor:
-        specifier: ^0.6.2
-        version: 0.6.2
       react:
         specifier: ^18.0.0
         version: 18.3.1
@@ -1525,9 +1522,6 @@ packages:
   punycode@2.3.1:
     resolution: {integrity: sha512-vYt7UD1U9Wg6138shLtLOvdAu+8DsC/ilFtEVHcH+wydcSpNE20AfSOduf6MkRFahL5FY7X1oU7nKVZFtfq8Fg==}
     engines: {node: '>=6'}
-
-  randomcolor@0.6.2:
-    resolution: {integrity: sha512-Mn6TbyYpFgwFuQ8KJKqf3bqqY9O1y37/0jgSK/61PUxV4QfIMv0+K2ioq8DfOjkBslcjwSzRfIDEXfzA9aCx7A==}
 
   react-bootstrap-icons@1.11.5:
     resolution: {integrity: sha512-eOhtFJMUqw98IJcfKJsSMZkFHCeNPTTwXZAe9V9d4mT22ARmbrISxPO9GmtWWuf72zQctLeZMGodX/q6wrbYYg==}
@@ -3247,8 +3241,6 @@ snapshots:
       long: 5.3.1
 
   punycode@2.3.1: {}
-
-  randomcolor@0.6.2: {}
 
   react-bootstrap-icons@1.11.5(react@18.3.1):
     dependencies:

@@ -1,15 +1,9 @@
-import { MouseEventHandler, useState } from 'react';
+import { useState } from 'react';
 import firebase from '../Firebase/firebase';
 import { IZoomedCard } from '../common/types';
 import CardCTA from './CardCTA';
 
-const ZoomedCard = ({
-  id,
-  color,
-  setShowModal,
-  question,
-  answer,
-}: IZoomedCard) => {
+const ZoomedCard = ({ id, setShowModal, question, answer }: IZoomedCard) => {
   // State
   const [flipped, setFlipped] = useState(false);
 
@@ -30,10 +24,9 @@ const ZoomedCard = ({
   return (
     <div>
       <div
-        className={`flip-card-inner rounded-2xl w-[800px] h-[500px] relative text-center transform-3d transition duration-600 ease-in-out transform ${
+        className={`flip-card-inner rounded-2xl w-[800px] h-[500px] relative text-center transform-3d transition duration-600 ease-in-out transform bg-amber-400 ${
           flipped ? 'rotate-y-180' : ''
         }`}
-        style={{ background: color }}
       >
         <div className="p-8 absolute w-full h-full backface-hidden">
           <h2 className="mb-12">Question</h2>

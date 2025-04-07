@@ -3,7 +3,6 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import firebase from '../Firebase/firebase';
-import randomcolor from 'randomcolor';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -34,13 +33,10 @@ export const AddForm = ({ setShowModal }: { setShowModal: any }) => {
   });
 
   const onSubmit = (values: z.infer<typeof formSchema>) => {
-    let color = randomcolor();
-
     firebase.firestore().collection('Cards').add({
       questionPreview: values.questionPreview,
       question: values.question,
       answer: values.answer,
-      color: color,
     });
     setShowModal(false);
   };

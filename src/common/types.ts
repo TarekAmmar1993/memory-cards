@@ -3,7 +3,6 @@ export interface ICard {
   questionPreview: string;
   question: string;
   answer: string;
-  color: string;
 }
 
 export interface IModal {
@@ -14,7 +13,6 @@ export interface IModal {
 
 export interface IZoomedCard {
   id: number;
-  color: string;
   setShowModal: any;
   question: string;
   answer: string;

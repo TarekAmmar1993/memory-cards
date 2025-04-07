@@ -12,7 +12,7 @@ const Header = () => {
   };
 
   return (
-    <div className="bg-linear-to-r/hsl from-indigo-700 to-indigo-400 flex justify-between items-center p-3">
+    <div className="bg-linear-to-r/hsl from-[#2362B0] to-[#43A3DB] flex justify-between items-center p-3">
       <h1 className="font-bold text-amber-400"> Memory Cards </h1>
       <Button
         onClick={handleAddButton}
