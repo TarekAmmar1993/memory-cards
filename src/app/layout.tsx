@@ -1,11 +1,10 @@
-import type { Metadata } from 'next';
-import { Analytics } from '@vercel/analytics/react';
-import '../index.css';
-import { SidebarProvider } from '@/components/ui/sidebar';
+import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/react";
+import "../index.css";
 
 export const metadata: Metadata = {
-  title: 'Memory Cards',
-  description: 'learn new skills with memory cards',
+  title: "Memory Cards",
+  description: "learn new skills with memory cards",
 };
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {

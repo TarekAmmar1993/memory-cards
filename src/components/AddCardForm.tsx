@@ -59,7 +59,7 @@ export const AddCardForm = ({ setShowModal }: { setShowModal: any }) => {
                 Question Preview
               </FormLabel>
               <FormControl>
-                <Input placeholder="Brian?!" {...field} />
+                <Input placeholder="Brian?" {...field} />
               </FormControl>
               <FormMessage className="text-start text-red-500" />
             </FormItem>
