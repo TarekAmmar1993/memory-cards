@@ -1,14 +1,14 @@
-import Card from './Card';
-import { useContext } from 'react';
-import { JobPrepContext } from '../context/context';
-import { ICard } from '../common/types';
+import Card from "./Card";
+import { useContext } from "react";
+import { JobPrepContext } from "../context/context";
+import { ICard } from "../common/types";
 
 const Cards = () => {
   // context
   const { cards } = useContext(JobPrepContext);
 
   return (
-    <div className="flex flex-wrap justify-center gap-4 p-2 max-w-fit mx-auto">
+    <div className="mx-auto grid grid-cols-1 justify-items-center p-4 md:grid-cols-2 lg:grid-cols-3">
       {cards.map((card: ICard) => (
         <Card
           id={card.id}

@@ -5,6 +5,7 @@ import { ICard } from "../common/types";
 import Image from "next/image";
 import dummyImg from "../assets/cp.jpg";
 import { Badge } from "@/components/ui/badge";
+import { createPortal } from "react-dom";
 
 const Card = ({ id, questionPreview, question, answer }: ICard) => {
   // State
@@ -16,7 +17,11 @@ const Card = ({ id, questionPreview, question, answer }: ICard) => {
 
   return (
     <div
-      className="font-default-color flex w-72 cursor-pointer flex-col gap-3 rounded-lg border-4 p-4 shadow-2xl odd:bg-[#EC781D] even:bg-[#43A3DB]"
+      className={`font-default-color flex scale-90 cursor-pointer flex-col gap-3 rounded-lg border-4 p-8 shadow-2xl odd:bg-[#EC781D] even:bg-[#43A3DB] ${
+        showModal
+          ? ""
+          : "transition-transform duration-300 ease-in-out hover:scale-100"
+      }`}
       onClick={handleClick}
     >
       <div className="mb-6 w-full overflow-hidden rounded-lg">
@@ -33,14 +38,18 @@ const Card = ({ id, questionPreview, question, answer }: ICard) => {
         </Badge>
       </div>
 
-      <Modal showModal={showModal} setShowModal={setShowModal}>
-        <ZoomedCard
-          id={id}
-          setShowModal={setShowModal}
-          question={question}
-          answer={answer}
-        />
-      </Modal>
+      {showModal &&
+        createPortal(
+          <Modal showModal={showModal} setShowModal={setShowModal}>
+            <ZoomedCard
+              id={id}
+              setShowModal={setShowModal}
+              question={question}
+              answer={answer}
+            />
+          </Modal>,
+          document.body,
+        )}
     </div>
   );
 };

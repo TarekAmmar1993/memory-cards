@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap');
-@import 'tailwindcss';
+@import url("https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap");
+@import "tailwindcss";
 
 @layer base {
   h1 {
@@ -43,7 +43,7 @@
   }
 }
 @theme {
-  --font-default-color: 'DynaPuff', system-ui;
+  --font-default-color: "DynaPuff", system-ui;
 }
 
 /* base styles */

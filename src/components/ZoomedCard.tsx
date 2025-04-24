@@ -1,7 +1,7 @@
-import { useState } from 'react';
-import firebase from '../Firebase/firebase';
-import { IZoomedCard } from '../common/types';
-import CardCTA from './CardCTA';
+import { useState } from "react";
+import firebase from "../Firebase/firebase";
+import { IZoomedCard } from "../common/types";
+import CardCTA from "./CardCTA";
 
 const ZoomedCard = ({ id, setShowModal, question, answer }: IZoomedCard) => {
   // State
@@ -17,18 +17,18 @@ const ZoomedCard = ({ id, setShowModal, question, answer }: IZoomedCard) => {
   };
 
   const handleDelete = (e) => {
-    firebase.firestore().collection('Cards').doc(id.toString()).delete();
+    firebase.firestore().collection("Cards").doc(id.toString()).delete();
     handleExit(e);
   };
 
   return (
     <div>
       <div
-        className={`flip-card-inner rounded-2xl w-[800px] h-[500px] relative text-center transform-3d transition duration-600 ease-in-out transform bg-amber-400 ${
-          flipped ? 'rotate-y-180' : ''
+        className={`flip-card-inner h-[500px] w-[800px] transform rounded-2xl bg-amber-400 text-center transition duration-600 ease-in-out transform-3d ${
+          flipped ? "rotate-y-180" : ""
         }`}
       >
-        <div className="p-8 absolute w-full h-full backface-hidden">
+        <div className="absolute h-full w-full p-8 backface-hidden">
           <h2 className="mb-12">Question</h2>
           <p> {question} </p>
           <CardCTA
@@ -37,7 +37,7 @@ const ZoomedCard = ({ id, setShowModal, question, answer }: IZoomedCard) => {
             handleFlip={handleFlip}
           />
         </div>
-        <div className="p-8 absolute w-full h-full backface-hidden rotate-y-180">
+        <div className="absolute h-full w-full rotate-y-180 p-8 backface-hidden">
           <h2 className="mb-12">Answer</h2>
           <p> {answer}</p>
           <CardCTA

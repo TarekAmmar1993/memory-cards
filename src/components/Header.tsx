@@ -4,6 +4,7 @@ import { SquarePlus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { AddCardForm } from "./AddCardForm";
 import { AddCategoryForm } from "./AddCategoryForm";
+import { createPortal } from "react-dom";
 
 const Header = () => {
   const [showCardForm, setShowCardForm] = useState(false);
@@ -33,12 +34,23 @@ const Header = () => {
         </Button>
       </div>
 
-      <Modal showModal={showCardForm} setShowModal={setShowCardForm}>
-        <AddCardForm setShowModal={setShowCardForm} />
-      </Modal>
-      <Modal showModal={showCategoryForm} setShowModal={setShowCategoryForm}>
-        <AddCategoryForm setShowModal={setShowCategoryForm} />
-      </Modal>
+      {showCardForm &&
+        createPortal(
+          <Modal showModal={showCardForm} setShowModal={setShowCardForm}>
+            <AddCardForm setShowModal={setShowCardForm} />
+          </Modal>,
+          document.body,
+        )}
+      {showCategoryForm &&
+        createPortal(
+          <Modal
+            showModal={showCategoryForm}
+            setShowModal={setShowCategoryForm}
+          >
+            <AddCategoryForm setShowModal={setShowCategoryForm} />
+          </Modal>,
+          document.body,
+        )}
     </div>
   );
 };

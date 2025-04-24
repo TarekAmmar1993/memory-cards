@@ -1,5 +1,5 @@
-import React, { useRef } from 'react';
-import { IModal } from '../common/types';
+import React, { useRef } from "react";
+import { IModal } from "../common/types";
 
 const Modal = ({ children, showModal, setShowModal }: IModal) => {
   const modalRef = useRef(null);
@@ -11,7 +11,7 @@ const Modal = ({ children, showModal, setShowModal }: IModal) => {
   return (
     showModal && (
       <div
-        className="absolute top-0 left-0 w-screen h-screen bg-black/80"
+        className="absolute top-0 left-0 h-screen w-screen bg-black/80"
         ref={modalRef}
         onClick={closeModal}
       >
