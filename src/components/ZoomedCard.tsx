@@ -1,10 +1,16 @@
 import { useState } from "react";
-import firebase from "../Firebase/firebase";
 import { IZoomedCard } from "../common/types";
 import CardCTA from "./CardCTA";
+import { getFirestore, doc, deleteDoc } from "firebase/firestore";
+import firebaseApp from "../Firebase/firebase";
 
-const ZoomedCard = ({ id, setShowModal, question, answer }: IZoomedCard) => {
-  // State
+const ZoomedCard = ({
+  id,
+  setShowModal,
+  question,
+  answer,
+  questionPreview,
+}: IZoomedCard) => {
   const [flipped, setFlipped] = useState(false);
 
   const handleFlip = () => {
@@ -16,8 +22,9 @@ const ZoomedCard = ({ id, setShowModal, question, answer }: IZoomedCard) => {
     setShowModal(false);
   };
 
-  const handleDelete = (e) => {
-    firebase.firestore().collection("Cards").doc(id.toString()).delete();
+  const handleDelete = async (e) => {
+    const db = getFirestore(firebaseApp);
+    await deleteDoc(doc(db, "Cards", questionPreview));
     handleExit(e);
   };
 

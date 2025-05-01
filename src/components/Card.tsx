@@ -8,7 +8,6 @@ import { Badge } from "@/components/ui/badge";
 import { createPortal } from "react-dom";
 
 const Card = ({ id, questionPreview, question, answer }: ICard) => {
-  // State
   const [showModal, setShowModal] = useState(false);
 
   const handleClick = () => {
@@ -46,6 +45,7 @@ const Card = ({ id, questionPreview, question, answer }: ICard) => {
               setShowModal={setShowModal}
               question={question}
               answer={answer}
+              questionPreview={questionPreview}
             />
           </Modal>,
           document.body,

@@ -13,6 +13,7 @@ export interface IModal {
 
 export interface IZoomedCard {
   id: number;
+  questionPreview: string;
   setShowModal: any;
   question: string;
   answer: string;

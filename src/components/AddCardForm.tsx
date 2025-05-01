@@ -2,7 +2,8 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import firebase from "../Firebase/firebase";
+import firebaseApp from "../Firebase/firebase";
+import { getFirestore, doc, setDoc } from "firebase/firestore";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -33,10 +34,13 @@ export const AddCardForm = ({ setShowModal }: { setShowModal: any }) => {
   });
 
   const onSubmit = (values: z.infer<typeof formSchema>) => {
-    firebase.firestore().collection("Cards").add({
-      questionPreview: values.questionPreview,
-      question: values.question,
+    const db = getFirestore(firebaseApp);
+    console.log(values);
+
+    setDoc(doc(db, "Cards", values.questionPreview), {
       answer: values.answer,
+      question: values.question,
+      questionPreview: values.questionPreview,
     });
     setShowModal(false);
   };

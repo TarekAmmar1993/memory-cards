@@ -1,11 +1,13 @@
 import Card from "./Card";
-import { useContext } from "react";
-import { JobPrepContext } from "../context/context";
+import { useCards } from "../hooks/customHooks";
 import { ICard } from "../common/types";
 
 const Cards = () => {
-  // context
-  const { cards } = useContext(JobPrepContext);
+  const { cards, loading } = useCards();
+
+  if (loading) {
+    return <div className="p-4 text-center">Loading...</div>;
+  }
 
   return (
     <div className="mx-auto grid grid-cols-1 justify-items-center p-4 md:grid-cols-2 lg:grid-cols-3">
