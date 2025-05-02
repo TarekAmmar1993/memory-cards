@@ -5,7 +5,6 @@ import { getFirestore, doc, deleteDoc } from "firebase/firestore";
 import firebaseApp from "../Firebase/firebase";
 
 const ZoomedCard = ({
-  id,
   setShowModal,
   question,
   answer,
