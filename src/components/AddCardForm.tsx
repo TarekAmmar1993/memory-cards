@@ -35,8 +35,6 @@ export const AddCardForm = ({ setShowModal }: { setShowModal: any }) => {
 
   const onSubmit = (values: z.infer<typeof formSchema>) => {
     const db = getFirestore(firebaseApp);
-    console.log(values);
-
     setDoc(doc(db, "Cards", values.questionPreview), {
       answer: values.answer,
       question: values.question,
