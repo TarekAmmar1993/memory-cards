@@ -1,5 +1,4 @@
 export interface ICard {
-  id: number;
   questionPreview: string;
   question: string;
   answer: string;
@@ -12,7 +11,6 @@ export interface IModal {
 }
 
 export interface IZoomedCard {
-  id: number;
   questionPreview: string;
   setShowModal: any;
   question: string;
