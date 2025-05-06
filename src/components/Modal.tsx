@@ -1,8 +1,16 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { IModal } from "../common/types";
 
 const Modal = ({ children, showModal, setShowModal }: IModal) => {
   const modalRef = useRef(null);
+
+  useEffect(() => {
+    document.body.classList.add("overflow-hidden");
+    // Cleanup when the component unmounts
+    return () => {
+      document.body.classList.remove("overflow-hidden");
+    };
+  }, [showModal]);
 
   const closeModal = () => {
     setShowModal(false);
@@ -11,7 +19,7 @@ const Modal = ({ children, showModal, setShowModal }: IModal) => {
   return (
     showModal && (
       <div
-        className="absolute top-0 left-0 h-screen w-screen bg-black/80"
+        className="sticky top-0 bottom-0 left-0 h-screen w-screen bg-black/80"
         ref={modalRef}
         onClick={closeModal}
       >
