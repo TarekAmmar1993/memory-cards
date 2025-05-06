@@ -20,7 +20,6 @@ const formSchema = z.object({
   }),
   categoryImage: z
     .custom<File[]>()
-
     .refine(
       (files) => files?.[0]?.type.startsWith("image/"),
       "File must be an image",
@@ -28,7 +27,7 @@ const formSchema = z.object({
     .optional(),
 });
 
-export const AddCategoryForm = ({ setShowModal }: { setShowModal: any }) => {
+export const AddCategoryForm = () => {
   const [dragActive, setDragActive] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -40,8 +39,6 @@ export const AddCategoryForm = ({ setShowModal }: { setShowModal: any }) => {
     console.log(values);
   };
   const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
-    console.log(1, e.dataTransfer);
-
     e.preventDefault();
     setDragActive(false);
 
