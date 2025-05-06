@@ -7,7 +7,7 @@ import dummyImg from "../assets/cp.jpg";
 import { Badge } from "@/components/ui/badge";
 import { createPortal } from "react-dom";
 
-const Card = ({ questionPreview, question, answer }: ICard) => {
+const Card = ({ id, questionPreview, question, answer }: ICard) => {
   const [showModal, setShowModal] = useState(false);
 
   const handleClick = () => {
@@ -41,10 +41,10 @@ const Card = ({ questionPreview, question, answer }: ICard) => {
         createPortal(
           <Modal showModal={showModal} setShowModal={setShowModal}>
             <ZoomedCard
+              id={id}
               setShowModal={setShowModal}
               question={question}
               answer={answer}
-              questionPreview={questionPreview}
             />
           </Modal>,
           document.body,

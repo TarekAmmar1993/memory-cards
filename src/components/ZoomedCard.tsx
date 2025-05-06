@@ -5,12 +5,7 @@ import { getFirestore, doc, deleteDoc } from "firebase/firestore";
 import firebaseApp from "../Firebase/firebase";
 import { sanitizeAIText } from "@/lib/utils";
 
-const ZoomedCard = ({
-  setShowModal,
-  question,
-  answer,
-  questionPreview,
-}: IZoomedCard) => {
+const ZoomedCard = ({ id, setShowModal, question, answer }: IZoomedCard) => {
   const [flipped, setFlipped] = useState(false);
 
   useEffect(() => {
@@ -36,7 +31,7 @@ const ZoomedCard = ({
 
   const handleDelete = async (e) => {
     const db = getFirestore(firebaseApp);
-    await deleteDoc(doc(db, "Cards", questionPreview));
+    await deleteDoc(doc(db, "Cards", id));
     handleExit(e);
   };
 

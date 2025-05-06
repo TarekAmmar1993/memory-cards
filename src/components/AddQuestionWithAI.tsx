@@ -3,7 +3,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import firebaseApp from "../Firebase/firebase";
-import { getFirestore, doc, setDoc } from "firebase/firestore";
+import { getFirestore, addDoc, collection } from "firebase/firestore";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -43,7 +43,7 @@ export const AddQuestionWithAI = ({ setShowModal }: { setShowModal: any }) => {
     });
 
     const db = getFirestore(firebaseApp);
-    setDoc(doc(db, "Cards", subject), {
+    addDoc(collection(db, "Cards"), {
       answer: response.text,
       question: question.text,
       questionPreview: subject,
