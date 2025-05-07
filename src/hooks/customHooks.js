@@ -1,6 +1,12 @@
 import { useEffect, useState } from "react";
 import firebaseApp from "../Firebase/firebase";
-import { getFirestore, collection, onSnapshot } from "firebase/firestore";
+import {
+  getFirestore,
+  collection,
+  onSnapshot,
+  query,
+  orderBy,
+} from "firebase/firestore";
 
 export const useCards = () => {
   const [cards, setCards] = useState([]);
@@ -9,7 +15,11 @@ export const useCards = () => {
   const getData = async () => {
     const db = getFirestore(firebaseApp);
 
-    onSnapshot(collection(db, "Cards"), (snapshot) => {
+    const cardsQuery = query(
+      collection(db, "Cards"),
+      orderBy("createdAt", "desc"),
+    );
+    onSnapshot(cardsQuery, (snapshot) => {
       const updatedCards = [];
       snapshot.docs.forEach((doc) => {
         updatedCards.push({

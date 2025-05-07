@@ -3,7 +3,12 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import firebaseApp from "../Firebase/firebase";
-import { getFirestore, addDoc, collection } from "firebase/firestore";
+import {
+  getFirestore,
+  addDoc,
+  collection,
+  serverTimestamp,
+} from "firebase/firestore";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -40,6 +45,7 @@ export const AddCardForm = ({ setShowModal }: { setShowModal: any }) => {
       answer: values.answer,
       question: values.question,
       questionPreview: values.questionPreview,
+      createdAt: serverTimestamp(),
     });
     setShowModal(false);
   };
