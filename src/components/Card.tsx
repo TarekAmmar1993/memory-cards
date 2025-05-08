@@ -24,7 +24,7 @@ const Card = ({ id, questionPreview, question, answer }: ICard) => {
       onClick={handleClick}
     >
       <div className="mb-6 w-full overflow-hidden rounded-lg">
-        <Image src={dummyImg} alt="dummy image" />
+        <Image src={dummyImg} alt="dummy image" priority={true} />
       </div>
       <h2 className="font-medium"> Question </h2>
       <p> {questionPreview}</p>
