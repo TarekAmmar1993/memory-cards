@@ -39,7 +39,7 @@ const SideBar = () => {
               </SidebarMenuItem>
             </SidebarMenu>
             <SidebarMenu>
-              <Collapsible defaultOpen className="group/collapsible">
+              <Collapsible className="group/collapsible">
                 <SidebarMenuItem>
                   <CollapsibleTrigger className="flex w-full cursor-pointer gap-2 p-2 hover:text-amber-400">
                     <GalleryVerticalEnd size={16} />
