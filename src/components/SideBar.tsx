@@ -17,8 +17,11 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@radix-ui/react-collapsible";
+import { useCategories } from "@/hooks/customHooks";
 
 const SideBar = () => {
+  const { categories } = useCategories();
+
   return (
     <Sidebar className="static">
       <SidebarContent>
@@ -48,36 +51,21 @@ const SideBar = () => {
                   </CollapsibleTrigger>
                   <CollapsibleContent>
                     <SidebarMenuSub>
-                      <SidebarMenuSubItem className="hover:text-amber-400">
-                        <a
-                          onClick={() => {
-                            console.log("react");
-                          }}
-                          href="#"
+                      {categories.map((category) => (
+                        <SidebarMenuSubItem
+                          key={category.id}
+                          className="hover:text-amber-400"
                         >
-                          <span>React</span>
-                        </a>
-                      </SidebarMenuSubItem>
-                      <SidebarMenuSubItem className="hover:text-amber-400">
-                        <a
-                          href="#"
-                          onClick={() => {
-                            console.log("vue");
-                          }}
-                        >
-                          <span>Vue</span>
-                        </a>
-                      </SidebarMenuSubItem>
-                      <SidebarMenuSubItem className="hover:text-amber-400">
-                        <a
-                          href="#"
-                          onClick={() => {
-                            console.log("angular");
-                          }}
-                        >
-                          <span>Angular</span>
-                        </a>
-                      </SidebarMenuSubItem>
+                          <a
+                            href="#"
+                            onClick={() => {
+                              console.log(category.categoryName);
+                            }}
+                          >
+                            <span>{category.categoryName}</span>
+                          </a>
+                        </SidebarMenuSubItem>
+                      ))}
                     </SidebarMenuSub>
                   </CollapsibleContent>
                 </SidebarMenuItem>

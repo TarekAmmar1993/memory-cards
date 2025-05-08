@@ -13,6 +13,8 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { useRef, useState } from "react";
+import firebaseApp from "../Firebase/firebase";
+import { addDoc, collection, getFirestore } from "firebase/firestore";
 
 const formSchema = z.object({
   categoryName: z.string().min(2, {
@@ -27,7 +29,7 @@ const formSchema = z.object({
     .optional(),
 });
 
-export const AddCategoryForm = () => {
+export const AddCategoryForm = ({ setShowModal }: { setShowModal: any }) => {
   const [dragActive, setDragActive] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -36,7 +38,12 @@ export const AddCategoryForm = () => {
   });
 
   const onSubmit = (values: z.infer<typeof formSchema>) => {
-    console.log(values);
+    const db = getFirestore(firebaseApp);
+
+    addDoc(collection(db, "Categories"), {
+      categoryName: values.categoryName,
+    });
+    setShowModal(false);
   };
   const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault();
