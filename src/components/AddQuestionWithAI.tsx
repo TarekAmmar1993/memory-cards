@@ -20,11 +20,13 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { GoogleGenAI } from "@google/genai";
+import CategoryOptionFormEl from "./CategoryOptionFormEl";
 
 const formSchema = z.object({
   subject: z.string().min(2, {
-    message: "Question must be at least 2 characters.",
+    message: "Subject must be at least 2 characters.",
   }),
+  category: z.string().optional(),
 });
 
 export const AddQuestionWithAI = ({ setShowModal }: { setShowModal: any }) => {
@@ -36,7 +38,7 @@ export const AddQuestionWithAI = ({ setShowModal }: { setShowModal: any }) => {
     apiKey: process.env.NEXT_PUBLIC_GEMINI_API_KEY,
   });
 
-  const main = async (subject: string) => {
+  const main = async (subject: string, category: string) => {
     const question = await ai.models.generateContent({
       model: "gemini-2.0-flash",
       contents: "generate a quick question about" + subject,
@@ -53,11 +55,12 @@ export const AddQuestionWithAI = ({ setShowModal }: { setShowModal: any }) => {
       question: question.text,
       questionPreview: subject,
       createdAt: serverTimestamp(),
+      category: category,
     });
   };
 
   const onSubmit = (values: z.infer<typeof formSchema>) => {
-    main(values.subject);
+    main(values.subject, values.category);
     setShowModal(false);
   };
 
@@ -65,7 +68,7 @@ export const AddQuestionWithAI = ({ setShowModal }: { setShowModal: any }) => {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="relative h-[20vh] w-[60vw] space-y-8 rounded-2xl bg-amber-400 p-8"
+        className="relative h-[40vh] w-[60vw] space-y-8 rounded-2xl bg-amber-400 p-8"
         onClick={(e) => {
           e.stopPropagation();
         }}
@@ -85,6 +88,7 @@ export const AddQuestionWithAI = ({ setShowModal }: { setShowModal: any }) => {
             </FormItem>
           )}
         />
+        <CategoryOptionFormEl form={form} />
 
         <Button
           type="submit"

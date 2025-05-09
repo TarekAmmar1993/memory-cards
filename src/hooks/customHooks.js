@@ -27,6 +27,7 @@ export const useCards = () => {
           questionPreview: doc.data().questionPreview,
           question: doc.data().question,
           answer: doc.data().answer,
+          category: doc.data().category,
         });
       });
       setCards(updatedCards);

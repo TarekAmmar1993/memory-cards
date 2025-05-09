@@ -1,4 +1,3 @@
-import React from "react";
 import { GalleryVerticalEnd, Diamond, ChevronDown } from "lucide-react";
 import {
   SidebarMenu,

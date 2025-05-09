@@ -18,6 +18,7 @@ const Cards = () => {
           questionPreview={card.questionPreview}
           question={card.question}
           answer={card.answer}
+          category={card.category}
         />
       ))}
     </div>

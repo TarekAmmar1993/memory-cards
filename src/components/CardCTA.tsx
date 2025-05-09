@@ -1,5 +1,4 @@
-import React from 'react';
-import { ArrowClockwise, Trash, X } from 'react-bootstrap-icons';
+import { ArrowClockwise, Trash, X } from "react-bootstrap-icons";
 
 const CardCTA = ({ handleExit, handleDelete, handleFlip }) => {
   return (
@@ -17,7 +16,7 @@ const CardCTA = ({ handleExit, handleDelete, handleFlip }) => {
         <ArrowClockwise size="30px" />
       </div>
       <div
-        className="fixed bottom-4 right-4 cursor-pointer hover:animate-bounce "
+        className="fixed right-4 bottom-4 cursor-pointer hover:animate-bounce"
         onClick={handleDelete}
       >
         <Trash size="30px" color="red" />

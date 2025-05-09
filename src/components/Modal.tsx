@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { IModal } from "../common/types";
 
 const Modal = ({ children, showModal, setShowModal }: IModal) => {

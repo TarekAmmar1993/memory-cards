@@ -3,6 +3,7 @@ export interface ICard {
   questionPreview: string;
   question: string;
   answer: string;
+  category: string;
 }
 
 export interface IModal {

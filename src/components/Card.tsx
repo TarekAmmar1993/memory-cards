@@ -7,7 +7,7 @@ import dummyImg from "../assets/cp.jpg";
 import { Badge } from "@/components/ui/badge";
 import { createPortal } from "react-dom";
 
-const Card = ({ id, questionPreview, question, answer }: ICard) => {
+const Card = ({ id, questionPreview, question, answer, category }: ICard) => {
   const [showModal, setShowModal] = useState(false);
 
   const handleClick = () => {
@@ -30,10 +30,7 @@ const Card = ({ id, questionPreview, question, answer }: ICard) => {
       <p> {questionPreview}</p>
       <div className="mt-auto flex gap-2">
         <Badge variant="outline" className="bg-amber-300">
-          React
-        </Badge>
-        <Badge variant="outline" className="bg-orange-600">
-          Angular
+          {category ? category : "No category"}
         </Badge>
       </div>
 

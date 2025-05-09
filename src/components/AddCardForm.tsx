@@ -20,6 +20,7 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import CategoryOptionFormEl from "./CategoryOptionFormEl";
 
 const formSchema = z.object({
   questionPreview: z.string().min(2, {
@@ -31,6 +32,7 @@ const formSchema = z.object({
   answer: z.string().min(10, {
     message: "Answer must be at least 10 characters.",
   }),
+  category: z.string(),
 });
 
 export const AddCardForm = ({ setShowModal }: { setShowModal: any }) => {
@@ -46,6 +48,7 @@ export const AddCardForm = ({ setShowModal }: { setShowModal: any }) => {
       question: values.question,
       questionPreview: values.questionPreview,
       createdAt: serverTimestamp(),
+      category: values.category,
     });
     setShowModal(false);
   };
@@ -54,7 +57,7 @@ export const AddCardForm = ({ setShowModal }: { setShowModal: any }) => {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="relative h-[60vh] w-[60vw] space-y-8 rounded-2xl bg-amber-400 p-8"
+        className="relative h-[80vh] w-[60vw] space-y-8 rounded-2xl bg-amber-400 p-8"
         onClick={(e) => {
           e.stopPropagation();
         }}
@@ -108,6 +111,7 @@ export const AddCardForm = ({ setShowModal }: { setShowModal: any }) => {
             </FormItem>
           )}
         />
+        <CategoryOptionFormEl form={form} />
         <Button
           type="submit"
           className="absolute right-8 bottom-8 cursor-pointer rounded-lg border-2 border-indigo-500 bg-indigo-500 text-white hover:bg-indigo-400"
