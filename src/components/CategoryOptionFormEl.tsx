@@ -43,7 +43,7 @@ const CategoryOptionFormEl = ({ form }) => {
                   variant="outline"
                   role="combobox"
                   className={cn(
-                    "w-[200px] justify-between",
+                    "w-[200px] justify-between bg-yellow-500",
                     !field.value && "text-muted-foreground",
                   )}
                 >
@@ -56,10 +56,10 @@ const CategoryOptionFormEl = ({ form }) => {
                 </Button>
               </FormControl>
             </PopoverTrigger>
-            <PopoverContent className="w-[200px] p-0">
+            <PopoverContent className="w-[200px] bg-yellow-500 p-0">
               <Command>
                 <CommandInput placeholder="Search category..." />
-                <CommandList>
+                <CommandList className="max-h-[100px] overflow-y-auto">
                   <CommandEmpty>No category found.</CommandEmpty>
                   <CommandGroup>
                     {categories.map((category) => (
