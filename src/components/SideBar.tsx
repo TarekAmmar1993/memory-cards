@@ -18,7 +18,7 @@ import {
 } from "@radix-ui/react-collapsible";
 import { useCategories } from "@/hooks/customHooks";
 
-const SideBar = () => {
+const SideBar = ({ setSelectedCategory }) => {
   const { categories } = useCategories();
 
   return (
@@ -30,10 +30,15 @@ const SideBar = () => {
             <SidebarMenu className="hover:text-amber-400">
               <SidebarMenuItem>
                 <SidebarMenuButton asChild>
-                  <a href="#">
+                  <button
+                    className="cursor-pointer"
+                    onClick={() => {
+                      setSelectedCategory("All");
+                    }}
+                  >
                     <Diamond size={16} />
                     <span>All cards</span>
-                  </a>
+                  </button>
                 </SidebarMenuButton>
               </SidebarMenuItem>
             </SidebarMenu>
@@ -55,14 +60,14 @@ const SideBar = () => {
                           key={category.id}
                           className="hover:text-amber-400"
                         >
-                          <a
-                            href="#"
+                          <button
+                            className="cursor-pointer"
                             onClick={() => {
-                              console.log(category.categoryName);
+                              setSelectedCategory(category.categoryName);
                             }}
                           >
                             <span>{category.categoryName}</span>
-                          </a>
+                          </button>
                         </SidebarMenuSubItem>
                       ))}
                     </SidebarMenuSub>
